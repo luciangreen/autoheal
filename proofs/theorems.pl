@@ -27,3 +27,4 @@ names_(Ns) :- autoheal:names(Ns).
 
 % 5. failures lists exactly the failing tests.
 theorem(failures_exact) :- forall(( spec(T), tests(T, Ts), spec(C) ), ( failures(C, Ts, Fs), iff(Fs == [], passes(C, Ts)) )).
+counterexample(failures_exact, C-Ts-Fs) :- spec(T), tests(T, Ts), spec(C), failures(C, Ts, Fs), \+ iff(Fs == [], passes(C, Ts)).
