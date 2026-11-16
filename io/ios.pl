@@ -1,0 +1,201 @@
+% 200 recorded inputs and outputs (swipl -g record -t halt io/run.pl writes this; check compares).
+io(1, heal, [then(evens, inc), [[9, 8, 2]-[8, 9]]], healed(then(reverse, tail))).
+io(2, failures, [then(tail, dedupe), [[]-[]]], []).
+io(3, heal_noise, [then(inc, dedupe), [[]-[3, 5, 9, 6, 1]]], cannot_heal).
+io(4, heal, [then(msort, dedupe), [[7]-[], [2, 5, 8, 0]-[8, 0], [6, 6]-[6]]], healed(then(tail, evens))).
+io(5, failures, [then(inc, double), [[0, 8, 5, 9]-[0, 10, 16, 18]]], [[0, 8, 5, 9]-want([0, 10, 16, 18])-got([2, 18, 12, 20])]).
+io(6, heal_noise, [then(evens, evens), [[5, 2, 7, 4, 2]-[1, 6, 0, 4, 9]]], cannot_heal).
+io(7, heal, [then(dedupe, msort), [[6, 5]-[14, 12], [8, 5]-[18, 12]]], healed(then(inc, double))).
+io(8, failures, [then(double, evens), [[]-[]]], []).
+io(9, heal_noise, [prim(inc), [[]-[1, 5, 8, 2, 1]]], cannot_heal).
+io(10, heal, [then(dedupe, tail), [[]-[], [9, 7, 5, 6, 7]-[6, 7, 7, 9]]], healed(then(msort, tail))).
+io(11, failures, [then(evens, double), [[1, 8, 4, 9, 4]-[8, 18, 8, 16, 2]]], [[1, 8, 4, 9, 4]-want([8, 18, 8, 16, 2])-got([16, 8, 8])]).
+io(12, heal_noise, [then(msort, double), [[9, 1, 0]-[2, 4, 9, 5, 5]]], cannot_heal).
+io(13, heal, [then(tail, reverse), [[5, 1, 7, 0]-[2, 14, 0]]], healed(then(tail, double))).
+io(14, failures, [then(dedupe, dedupe), [[]-[]]], []).
+io(15, heal_noise, [then(msort, tail), [[2]-[8, 7]]], cannot_heal).
+io(16, heal, [then(evens, dedupe), [[2, 2, 4, 9]-[4, 4, 8, 18], [9]-[18]]], healed(prim(double))).
+io(17, failures, [then(inc, tail), [[0, 4]-[1, 5], [4, 1]-[2, 5]]], [[0, 4]-want([1, 5])-got([5]), [4, 1]-want([2, 5])-got([2])]).
+io(18, heal_noise, [then(inc, dedupe), [[5, 8, 5, 0]-[5, 4], [4, 5, 4]-[8]]], cannot_heal).
+io(19, heal, [then(double, tail), [[9, 4, 1]-[1, 4, 9]]], healed(prim(reverse))).
+io(20, failures, [then(reverse, reverse), [[4, 0, 1, 8, 3]-[0, 2, 16, 6], [4, 9]-[18]]], [[4, 0, 1, 8, 3]-want([0, 2, 16, 6])-got([4, 0, 1, 8, 3]), [4, 9]-want([18])-got([4, 9])]).
+io(21, heal_noise, [then(double, double), [[0, 8, 8, 1]-[2, 8, 9], [6, 8, 6, 7]-[2]]], cannot_heal).
+io(22, heal, [then(reverse, reverse), [[2, 8, 6, 1]-[4, 16, 12, 2]]], healed(prim(double))).
+io(23, failures, [then(evens, tail), [[6]-[7], [7, 7, 2, 7, 0]-[8, 8, 3, 8, 1]]], [[6]-want([7])-got([]), [7, 7, 2, 7, 0]-want([8, 8, 3, 8, 1])-got([0])]).
+io(24, heal_noise, [then(msort, dedupe), [[]-[]]], already_passes).
+io(25, heal, [then(inc, reverse), [[]-[], [1, 8, 3, 6, 4]-[6, 4], [4, 0, 5, 0]-[0, 0]]], healed(then(evens, tail))).
+io(26, failures, [then(tail, double), [[4, 7]-[5, 8]]], [[4, 7]-want([5, 8])-got([14])]).
+io(27, heal_noise, [prim(tail), [[9]-[8]]], cannot_heal).
+io(28, heal, [then(evens, reverse), [[4]-[4], []-[]]], already_passes).
+io(29, failures, [then(reverse, reverse), [[6, 2, 9, 7, 1]-[3, 10, 8, 2]]], [[6, 2, 9, 7, 1]-want([3, 10, 8, 2])-got([6, 2, 9, 7, 1])]).
+io(30, heal_noise, [then(inc, inc), [[5, 5, 5]-[]]], healed(prim(evens))).
+io(31, heal, [then(inc, reverse), [[4, 3, 1, 6, 4]-[1, 3, 4, 4, 6], [5, 5, 2, 5]-[2, 5, 5, 5], [7]-[7]]], healed(prim(msort))).
+io(32, failures, [then(dedupe, double), [[9]-[]]], [[9]-want([])-got([18])]).
+io(33, heal_noise, [then(reverse, dedupe), [[6]-[2, 9], [0, 1]-[7, 9]]], cannot_heal).
+io(34, heal, [then(msort, reverse), [[3]-[8], [7, 3]-[16, 8]]], healed(then(inc, double))).
+io(35, failures, [then(evens, double), [[9, 1]-[9, 1]]], [[9, 1]-want([9, 1])-got([])]).
+io(36, heal_noise, [prim(double), [[6, 1, 6]-[5]]], cannot_heal).
+io(37, heal, [prim(dedupe), [[5, 6, 9]-[6, 5], [6, 5, 8, 4]-[8, 5, 6], []-[]]], healed(then(reverse, tail))).
+io(38, failures, [then(inc, reverse), [[]-[], [1, 6]-[2, 7], []-[]]], [[1, 6]-want([2, 7])-got([7, 2])]).
+io(39, heal_noise, [then(double, reverse), [[]-[9, 1, 8, 4, 4], [4, 1, 7]-[8, 4, 7, 5]]], cannot_heal).
+io(40, heal, [then(double, double), [[]-[]]], already_passes).
+io(41, failures, [then(msort, reverse), [[5, 7, 4]-[7, 9, 6], [6]-[8]]], [[5, 7, 4]-want([7, 9, 6])-got([7, 5, 4]), [6]-want([8])-got([6])]).
+io(42, heal_noise, [then(inc, msort), [[6, 6, 7]-[5, 7, 3], [0, 6, 2, 2, 2]-[7, 1, 9, 5, 3]]], cannot_heal).
+io(43, heal, [then(dedupe, tail), [[4, 1, 2]-[6, 3, 4], [9, 8, 5, 2, 5]-[11, 10, 7, 4, 7], [9, 2]-[11, 4]]], healed(then(inc, inc))).
+io(44, failures, [then(reverse, evens), [[0, 0, 7]-[0, 0]]], []).
+io(45, heal_noise, [then(msort, double), [[0, 4, 1]-[4, 3, 0]]], cannot_heal).
+io(46, heal, [then(evens, evens), [[]-[], [7, 5, 9, 1]-[2, 10, 14, 18]]], healed(then(msort, double))).
+io(47, failures, [then(double, msort), [[6]-[]]], [[6]-want([])-got([12])]).
+io(48, heal_noise, [then(reverse, dedupe), [[5]-[8, 9], [1, 0]-[3, 5, 1, 4, 3]]], cannot_heal).
+io(49, heal, [then(msort, dedupe), [[4, 2, 8, 7, 2]-[2, 7, 8, 2], [3, 3, 1]-[1, 3]]], healed(then(tail, reverse))).
+io(50, failures, [prim(inc), [[3, 4, 0]-[8, 0]]], [[3, 4, 0]-want([8, 0])-got([4, 5, 1])]).
+io(51, heal_noise, [prim(inc), [[5, 3, 9]-[4, 3, 3]]], cannot_heal).
+io(52, heal, [then(reverse, msort), [[4, 2, 5, 0, 8]-[4, 2, 0, 8], [5, 6, 5, 4]-[6, 4]]], healed(prim(evens))).
+io(53, failures, [then(inc, dedupe), [[]-[]]], []).
+io(54, heal_noise, [then(msort, evens), [[]-[9, 0, 6]]], cannot_heal).
+io(55, heal, [then(msort, evens), [[6, 2, 4, 3]-[4, 5, 3, 7], [7]-[8]]], healed(then(reverse, inc))).
+io(56, failures, [then(double, double), [[]-[], [7, 7]-[7, 7]]], [[7, 7]-want([7, 7])-got([28, 28])]).
+io(57, heal_noise, [then(inc, inc), [[9, 2, 2, 8]-[8, 8, 8, 0]]], cannot_heal).
+io(58, heal, [then(msort, evens), [[3, 7, 6, 9, 7]-[8, 16, 14, 20, 16], [5, 6, 2, 1]-[12, 14, 6, 4]]], healed(then(inc, double))).
+io(59, failures, [then(reverse, dedupe), [[]-[], [2, 0, 6, 6, 0]-[0, 0, 4, 12, 12]]], [[2, 0, 6, 6, 0]-want([0, 0, 4, 12, 12])-got([0, 2, 6])]).
+io(60, heal_noise, [prim(tail), [[5, 3, 2, 1]-[7, 2]]], cannot_heal).
+io(61, heal, [then(double, inc), [[8, 6, 7]-[7, 8], [5, 5]-[6], [3, 1]-[2]]], healed(then(tail, inc))).
+io(62, failures, [then(double, dedupe), [[3, 9, 8]-[16], [9, 8, 6]-[16, 12]]], [[3, 9, 8]-want([16])-got([6, 16, 18]), [9, 8, 6]-want([16, 12])-got([12, 16, 18])]).
+io(63, heal_noise, [then(dedupe, dedupe), [[]-[5, 7]]], cannot_heal).
+io(64, heal, [then(inc, msort), [[]-[], [5, 3, 7, 2]-[2], [8, 4]-[8, 4]]], healed(prim(evens))).
+io(65, failures, [then(reverse, reverse), [[]-[], [6, 0, 2]-[0, 4, 12]]], [[6, 0, 2]-want([0, 4, 12])-got([6, 0, 2])]).
+io(66, heal_noise, [then(evens, evens), [[8, 4, 8, 7, 5]-[8, 0, 4, 0]]], cannot_heal).
+io(67, heal, [then(inc, reverse), [[3, 1, 8]-[2, 6, 16], []-[]]], healed(then(msort, double))).
+io(68, failures, [then(dedupe, msort), [[1, 8, 7, 4]-[2, 5, 8, 9], [4]-[5]]], [[1, 8, 7, 4]-want([2, 5, 8, 9])-got([1, 4, 7, 8]), [4]-want([5])-got([4])]).
+io(69, heal_noise, [prim(msort), [[]-[0]]], cannot_heal).
+io(70, heal, [then(tail, msort), [[]-[], [2, 6, 7]-[3, 7, 8], [1, 1]-[2]]], healed(then(dedupe, inc))).
+io(71, failures, [then(tail, dedupe), [[3, 5]-[6, 10], [0, 7, 2, 1]-[0, 2, 4, 14], [4, 9, 7, 7]-[8, 14, 18]]], [[3, 5]-want([6, 10])-got([5]), [0, 7, 2, 1]-want([0, 2, 4, 14])-got([1, 2, 7]), [4, 9, 7, 7]-want([8, 14, 18])-got([7, 9])]).
+io(72, heal_noise, [then(tail, double), [[6, 3]-[8, 8, 3]]], cannot_heal).
+io(73, heal, [then(inc, dedupe), [[1, 7]-[]]], healed(prim(evens))).
+io(74, failures, [then(evens, msort), [[8]-[16], [6, 4, 9, 4]-[8, 12, 18]]], [[8]-want([16])-got([8]), [6, 4, 9, 4]-want([8, 12, 18])-got([4, 4, 6])]).
+io(75, heal_noise, [then(double, reverse), [[8, 1, 5]-[6], [0, 6, 4]-[]]], cannot_heal).
+io(76, heal, [then(double, msort), [[2, 1]-[2], [4, 9, 4, 6, 2]-[4, 6, 9]]], healed(then(dedupe, tail))).
+io(77, failures, [then(reverse, msort), [[4, 1, 1, 6]-[6, 4, 1, 1]]], [[4, 1, 1, 6]-want([6, 4, 1, 1])-got([1, 1, 4, 6])]).
+io(78, heal_noise, [then(msort, dedupe), [[6, 1, 1, 7, 6]-[2, 5, 5], [2, 3]-[9, 7, 4]]], cannot_heal).
+io(79, heal, [then(dedupe, tail), [[3, 4, 3, 3, 1]-[4], [2]-[2], []-[]]], healed(prim(evens))).
+io(80, failures, [prim(evens), [[3, 3]-[], [4, 4, 1, 5]-[5, 5]]], [[4, 4, 1, 5]-want([5, 5])-got([4, 4])]).
+io(81, heal_noise, [prim(dedupe), [[3, 5, 3]-[1, 1, 7, 9, 7], [6, 2, 9, 4]-[7, 0]]], cannot_heal).
+io(82, heal, [then(evens, dedupe), [[3, 5]-[3, 5]]], healed(prim(msort))).
+io(83, failures, [then(double, dedupe), [[5, 7, 7, 2, 3]-[2, 3, 7]]], [[5, 7, 7, 2, 3]-want([2, 3, 7])-got([4, 6, 10, 14])]).
+io(84, heal_noise, [then(evens, evens), [[]-[0, 3, 4]]], cannot_heal).
+io(85, heal, [then(dedupe, double), [[0, 9, 5, 4]-[8, 10, 18, 0]]], healed(then(reverse, double))).
+io(86, failures, [then(dedupe, reverse), [[6, 6, 8, 0, 9]-[10, 1, 9, 7, 7], []-[]]], [[6, 6, 8, 0, 9]-want([10, 1, 9, 7, 7])-got([9, 8, 6, 0])]).
+io(87, heal_noise, [prim(dedupe), [[8]-[9, 7, 2, 7]]], cannot_heal).
+io(88, heal, [then(msort, inc), [[]-[]]], already_passes).
+io(89, failures, [then(evens, inc), [[3, 0, 0, 6, 3]-[6, 0, 0], [3, 5, 0, 4, 2]-[2, 4, 0]]], [[3, 0, 0, 6, 3]-want([6, 0, 0])-got([1, 1, 7]), [3, 5, 0, 4, 2]-want([2, 4, 0])-got([1, 5, 3])]).
+io(90, heal_noise, [then(reverse, evens), [[3, 7, 6]-[2]]], cannot_heal).
+io(91, heal, [then(msort, tail), [[8, 5]-[9, 6]]], healed(prim(inc))).
+io(92, failures, [then(double, dedupe), [[1, 2, 2]-[1, 2], []-[], [0, 9]-[0, 9]]], [[1, 2, 2]-want([1, 2])-got([2, 4]), [0, 9]-want([0, 9])-got([0, 18])]).
+io(93, heal_noise, [prim(msort), [[3, 7, 0, 9, 8]-[6, 7, 2, 5, 5], [3, 6]-[2]]], cannot_heal).
+io(94, heal, [then(msort, inc), [[2, 9, 6]-[3, 7]]], healed(then(evens, inc))).
+io(95, failures, [then(tail, dedupe), [[]-[], [4, 0, 1, 9, 4]-[8, 0, 8]]], [[4, 0, 1, 9, 4]-want([8, 0, 8])-got([0, 1, 4, 9])]).
+io(96, heal_noise, [then(reverse, evens), [[9, 6, 0]-[]]], cannot_heal).
+io(97, heal, [then(msort, msort), [[6, 2, 3, 1, 4]-[7, 3, 4, 2, 5], [1, 7, 5, 6, 8]-[2, 8, 6, 7, 9]]], healed(prim(inc))).
+io(98, failures, [then(dedupe, reverse), [[]-[], [5, 1, 9, 4, 5]-[2, 8, 10, 10, 18]]], [[5, 1, 9, 4, 5]-want([2, 8, 10, 10, 18])-got([9, 5, 4, 1])]).
+io(99, heal_noise, [then(dedupe, msort), [[]-[6]]], cannot_heal).
+io(100, heal, [then(tail, double), [[5, 9]-[12, 20], [7]-[16]]], healed(then(inc, double))).
+io(101, failures, [then(evens, dedupe), [[1, 2, 8, 7, 0]-[1, 2, 3, 8, 9]]], [[1, 2, 8, 7, 0]-want([1, 2, 3, 8, 9])-got([0, 2, 8])]).
+io(102, heal_noise, [then(msort, inc), [[7, 7, 4]-[1, 6, 6], [7, 0, 4, 3, 4]-[0, 9, 8, 9]]], cannot_heal).
+io(103, heal, [then(msort, evens), [[8, 4, 8, 0, 9]-[10, 1, 9, 5, 9], [4, 6, 2, 0, 1]-[2, 1, 3, 7, 5], [0, 8]-[9, 1]]], healed(then(reverse, inc))).
+io(104, failures, [then(inc, dedupe), [[9]-[9]]], [[9]-want([9])-got([10])]).
+io(105, heal_noise, [then(msort, reverse), [[0, 5]-[3], [2, 1, 0, 6]-[]]], cannot_heal).
+io(106, heal, [then(double, tail), [[6, 2]-[2], [0, 7]-[], [3, 6, 5, 1, 4]-[4]]], healed(then(evens, tail))).
+io(107, failures, [then(double, reverse), [[3, 2, 0, 8, 3]-[8, 0, 2, 3], [4, 2, 4, 8]-[4, 2, 4], [6, 2, 7]-[2, 6]]], [[3, 2, 0, 8, 3]-want([8, 0, 2, 3])-got([6, 16, 0, 4, 6]), [4, 2, 4, 8]-want([4, 2, 4])-got([16, 8, 4, 8]), [6, 2, 7]-want([2, 6])-got([14, 4, 12])]).
+io(108, heal_noise, [then(double, dedupe), [[2]-[4]]], already_passes).
+io(109, heal, [prim(evens), [[2, 8, 3, 6, 9]-[3, 6, 9]]], healed(then(tail, tail))).
+io(110, failures, [then(inc, tail), [[1, 5, 6, 9, 3]-[6], [6, 7, 5, 2, 6]-[2, 6, 6], [4, 0, 4]-[0, 4, 4]]], [[1, 5, 6, 9, 3]-want([6])-got([6, 7, 10, 4]), [6, 7, 5, 2, 6]-want([2, 6, 6])-got([8, 6, 3, 7]), [4, 0, 4]-want([0, 4, 4])-got([1, 5])]).
+io(111, heal_noise, [then(reverse, dedupe), [[0, 5, 2]-[7, 7], [2]-[8, 4]]], cannot_heal).
+io(112, heal, [then(inc, tail), [[]-[]]], already_passes).
+io(113, failures, [then(evens, dedupe), [[]-[]]], []).
+io(114, heal_noise, [then(tail, msort), [[0, 4, 6]-[3, 4, 4, 8, 0]]], cannot_heal).
+io(115, heal, [prim(reverse), [[7]-[7]]], already_passes).
+io(116, failures, [then(evens, reverse), [[]-[], [8, 8]-[8, 8], [5, 2]-[5, 2]]], [[5, 2]-want([5, 2])-got([2])]).
+io(117, heal_noise, [then(double, dedupe), [[8]-[2]]], cannot_heal).
+io(118, heal, [prim(reverse), [[8]-[], [8, 1, 8]-[1, 8]]], healed(prim(tail))).
+io(119, failures, [then(reverse, tail), [[1]-[]]], []).
+io(120, heal_noise, [then(tail, reverse), [[0, 7, 5]-[], [9, 8]-[2]]], cannot_heal).
+io(121, heal, [then(msort, reverse), [[0, 0, 8]-[0, 0, 8], [7, 5, 4, 8]-[4, 5, 7, 8]]], healed(prim(msort))).
+io(122, failures, [then(inc, tail), [[0, 7, 5, 2]-[0, 4, 10, 14], [0, 1, 0]-[0, 0, 2]]], [[0, 7, 5, 2]-want([0, 4, 10, 14])-got([8, 6, 3]), [0, 1, 0]-want([0, 0, 2])-got([2, 1])]).
+io(123, heal_noise, [then(inc, double), [[]-[8, 3, 9]]], cannot_heal).
+io(124, heal, [prim(msort), [[7]-[7]]], already_passes).
+io(125, failures, [then(evens, tail), [[]-[]]], []).
+io(126, heal_noise, [then(tail, dedupe), [[]-[6, 4, 2, 3]]], cannot_heal).
+io(127, heal, [then(tail, msort), [[4, 4, 8, 0]-[8, 4, 4, 0], [4]-[4], [5, 9, 0, 4]-[9, 5, 4, 0]]], healed(then(msort, reverse))).
+io(128, failures, [then(reverse, dedupe), [[1, 1, 4]-[4], [2, 7, 5, 2, 6]-[5, 2, 6]]], [[1, 1, 4]-want([4])-got([1, 4]), [2, 7, 5, 2, 6]-want([5, 2, 6])-got([2, 5, 6, 7])]).
+io(129, heal_noise, [then(inc, msort), [[1, 2, 6, 9, 7]-[3, 6, 7, 9, 3], [6, 8, 4]-[]]], cannot_heal).
+io(130, heal, [then(tail, inc), [[8]-[8], [8, 1]-[1, 8]]], healed(prim(reverse))).
+io(131, failures, [then(evens, double), [[5, 3, 9]-[3, 5, 9]]], [[5, 3, 9]-want([3, 5, 9])-got([])]).
+io(132, heal_noise, [then(evens, reverse), [[5]-[5], [6, 2, 3, 6]-[]]], cannot_heal).
+io(133, heal, [then(msort, inc), [[2, 6, 7, 5, 9]-[3, 7]]], healed(then(evens, inc))).
+io(134, failures, [then(inc, dedupe), [[3, 3, 4, 5, 3]-[6, 6, 8, 10, 6], [8, 3, 0, 1]-[16, 6, 0, 2]]], [[3, 3, 4, 5, 3]-want([6, 6, 8, 10, 6])-got([4, 5, 6]), [8, 3, 0, 1]-want([16, 6, 0, 2])-got([1, 2, 4, 9])]).
+io(135, heal_noise, [then(evens, tail), [[6, 0, 2, 3, 7]-[3, 2], []-[0]]], cannot_heal).
+io(136, heal, [then(tail, evens), [[0, 6, 8, 3, 6]-[7, 4, 9, 7, 1]]], healed(then(reverse, inc))).
+io(137, failures, [then(evens, msort), [[]-[], [1, 5, 2, 8, 0]-[1, 5, 2, 8, 0], [0, 5, 5]-[0, 5, 5]]], [[1, 5, 2, 8, 0]-want([1, 5, 2, 8, 0])-got([0, 2, 8]), [0, 5, 5]-want([0, 5, 5])-got([0])]).
+io(138, heal_noise, [then(double, tail), [[3, 9, 5, 9]-[6, 4]]], cannot_heal).
+io(139, heal, [then(reverse, double), [[9, 4, 3, 4, 3]-[9, 4, 4, 3, 3], [3, 4, 0, 3, 9]-[9, 4, 3, 3, 0], [5, 3, 9, 4, 6]-[9, 6, 5, 4, 3]]], healed(then(msort, reverse))).
+io(140, failures, [then(tail, double), [[3, 5, 5, 9, 9]-[7, 11, 11, 19, 19], [1, 8, 5, 4]-[3, 17, 11, 9], [0]-[1]]], [[3, 5, 5, 9, 9]-want([7, 11, 11, 19, 19])-got([10, 10, 18, 18]), [1, 8, 5, 4]-want([3, 17, 11, 9])-got([16, 10, 8]), [0]-want([1])-got([])]).
+io(141, heal_noise, [prim(inc), [[3, 0]-[6], [4, 7, 1, 0, 1]-[0, 9]]], cannot_heal).
+io(142, heal, [prim(evens), [[8, 9]-[8], [6, 3, 6, 5, 3]-[6, 6], [8, 8, 9, 3]-[8, 8]]], already_passes).
+io(143, failures, [prim(msort), [[3, 7]-[4, 8]]], [[3, 7]-want([4, 8])-got([3, 7])]).
+io(144, heal_noise, [then(msort, evens), [[7, 3, 4]-[9, 0], [2, 3, 5, 1, 3]-[]]], cannot_heal).
+io(145, heal, [then(tail, tail), [[3, 8]-[8], [2, 7, 4, 7]-[2, 4], [9, 9, 7, 3, 3]-[]]], healed(prim(evens))).
+io(146, failures, [then(msort, msort), [[1, 2, 7, 7]-[4]]], [[1, 2, 7, 7]-want([4])-got([1, 2, 7, 7])]).
+io(147, heal_noise, [then(double, evens), [[2, 1, 7, 8, 2]-[3, 0, 4], [0]-[6, 9]]], cannot_heal).
+io(148, heal, [then(inc, dedupe), [[]-[]]], already_passes).
+io(149, failures, [then(dedupe, double), [[]-[], [4, 3]-[6, 8]]], []).
+io(150, heal_noise, [then(tail, inc), [[]-[]]], already_passes).
+io(151, heal, [then(msort, reverse), [[4, 6]-[]]], healed(then(tail, tail))).
+io(152, failures, [then(reverse, reverse), [[6, 1, 6]-[2, 12]]], [[6, 1, 6]-want([2, 12])-got([6, 1, 6])]).
+io(153, heal_noise, [then(dedupe, msort), [[5]-[], []-[2, 2, 6, 2, 8]]], cannot_heal).
+io(154, heal, [then(reverse, msort), [[4, 0, 7, 9]-[9, 7, 4, 0], [0]-[0], [3]-[3]]], healed(then(msort, reverse))).
+io(155, failures, [then(dedupe, inc), [[9, 9, 2, 0]-[2, 9, 9]]], [[9, 9, 2, 0]-want([2, 9, 9])-got([1, 3, 10])]).
+io(156, heal_noise, [then(evens, msort), [[]-[], [6, 0, 7, 4]-[5, 5, 6, 7]]], cannot_heal).
+io(157, heal, [then(double, tail), [[]-[], [1]-[]]], already_passes).
+io(158, failures, [then(inc, msort), [[0]-[0], [9, 0, 7]-[0], [5, 9, 4, 3, 9]-[4]]], [[0]-want([0])-got([1]), [9, 0, 7]-want([0])-got([1, 8, 10]), [5, 9, 4, 3, 9]-want([4])-got([4, 5, 6, 10, 10])]).
+io(159, heal_noise, [then(reverse, evens), [[3]-[]]], already_passes).
+io(160, heal, [then(tail, double), [[4, 7, 9, 7]-[4], [5, 6]-[6], [7, 7, 5, 0]-[0]]], healed(prim(evens))).
+io(161, failures, [then(msort, double), [[3, 9, 8, 3, 0]-[0, 3, 8, 9], []-[], []-[]]], [[3, 9, 8, 3, 0]-want([0, 3, 8, 9])-got([0, 6, 6, 16, 18])]).
+io(162, heal_noise, [then(msort, inc), [[0, 8, 2]-[3]]], cannot_heal).
+io(163, heal, [then(inc, double), [[4, 6, 9, 3]-[9, 6, 4], [9, 5, 2]-[5, 9], []-[]]], healed(then(reverse, tail))).
+io(164, failures, [then(reverse, tail), [[]-[], [4, 3, 8, 3, 8]-[6, 16, 6, 16]]], [[4, 3, 8, 3, 8]-want([6, 16, 6, 16])-got([3, 8, 3, 4])]).
+io(165, heal_noise, [then(evens, double), [[7, 4, 7, 0]-[6, 1, 2, 6, 1]]], cannot_heal).
+io(166, heal, [then(msort, reverse), [[7, 7]-[14], [1, 1]-[2], [6, 9, 8, 5]-[10, 12, 16, 18]]], healed(then(dedupe, double))).
+io(167, failures, [then(double, tail), [[1, 8, 4, 0, 6]-[2, 16, 8, 0, 12], [5, 4, 6]-[10, 8, 12]]], [[1, 8, 4, 0, 6]-want([2, 16, 8, 0, 12])-got([16, 8, 0, 12]), [5, 4, 6]-want([10, 8, 12])-got([8, 12])]).
+io(168, heal_noise, [then(evens, dedupe), [[0, 6]-[1, 2, 3, 0, 5]]], cannot_heal).
+io(169, heal, [then(evens, inc), [[3, 4, 5, 1]-[6, 8, 10, 2], [8]-[16]]], healed(prim(double))).
+io(170, failures, [then(inc, inc), [[9, 0, 6, 0]-[1, 7, 1], []-[]]], [[9, 0, 6, 0]-want([1, 7, 1])-got([11, 2, 8, 2])]).
+io(171, heal_noise, [then(inc, evens), [[]-[4, 7]]], cannot_heal).
+io(172, heal, [then(dedupe, evens), [[6, 4, 0, 2]-[0, 4, 8, 12], [0, 4, 5, 9, 4]-[0, 8, 8, 10, 18]]], healed(then(msort, double))).
+io(173, failures, [then(msort, evens), [[1, 1]-[1, 1], [2, 7, 0, 3, 5]-[2, 7, 0, 3, 5], []-[]]], [[1, 1]-want([1, 1])-got([]), [2, 7, 0, 3, 5]-want([2, 7, 0, 3, 5])-got([0, 2])]).
+io(174, heal_noise, [prim(evens), [[1]-[8, 4, 5], [1, 3, 6, 7, 3]-[1, 0, 2, 6, 0]]], cannot_heal).
+io(175, heal, [then(tail, tail), [[6, 4, 8]-[6, 4, 8]]], healed(prim(evens))).
+io(176, failures, [then(double, dedupe), [[1, 7, 1, 5, 5]-[10, 10, 2, 14, 2]]], [[1, 7, 1, 5, 5]-want([10, 10, 2, 14, 2])-got([2, 10, 14])]).
+io(177, heal_noise, [then(tail, inc), [[1, 1, 2, 2, 8]-[2, 0, 7, 4, 5], [4]-[]]], cannot_heal).
+io(178, heal, [then(double, double), [[9, 1, 3, 9]-[2, 6, 18], [6, 7, 5]-[10, 12, 14], []-[]]], healed(then(dedupe, double))).
+io(179, failures, [then(tail, dedupe), [[8, 3, 3]-[8], [4, 4]-[4, 4], [9, 2, 1]-[2]]], [[8, 3, 3]-want([8])-got([3]), [4, 4]-want([4, 4])-got([4]), [9, 2, 1]-want([2])-got([1, 2])]).
+io(180, heal_noise, [then(msort, reverse), [[8]-[]]], healed(prim(tail))).
+io(181, heal, [then(reverse, msort), [[8, 8, 7, 6]-[16, 16, 14, 12], [9, 9, 2, 3]-[18, 18, 4, 6], [3, 4, 8, 4, 9]-[6, 8, 16, 8, 18]]], healed(prim(double))).
+io(182, failures, [then(inc, double), [[6, 6]-[6], [5, 9, 1]-[9, 1], []-[]]], [[6, 6]-want([6])-got([14, 14]), [5, 9, 1]-want([9, 1])-got([12, 20, 4])]).
+io(183, heal_noise, [then(inc, dedupe), [[6, 9, 9, 1, 0]-[2, 3, 1]]], cannot_heal).
+io(184, heal, [then(inc, inc), [[7]-[7], [9]-[9]]], healed(prim(reverse))).
+io(185, failures, [then(evens, reverse), [[]-[], [0, 2, 1, 9]-[1, 2, 9]]], [[0, 2, 1, 9]-want([1, 2, 9])-got([2, 0])]).
+io(186, heal_noise, [then(dedupe, double), [[9, 4, 5]-[1, 0], [4]-[7, 0, 9, 0, 3]]], cannot_heal).
+io(187, heal, [then(msort, double), [[1, 2, 1]-[3, 4, 3]]], healed(then(inc, inc))).
+io(188, failures, [then(dedupe, tail), [[6, 1, 6, 8]-[6, 1, 6]]], [[6, 1, 6, 8]-want([6, 1, 6])-got([6, 8])]).
+io(189, heal_noise, [prim(msort), [[]-[4, 1, 5], [2, 8, 7, 3]-[1]]], cannot_heal).
+io(190, heal, [then(inc, double), [[4, 3, 9]-[9, 3, 4], [3, 8, 4, 7, 4]-[4, 7, 4, 8, 3], [2, 7, 7]-[7, 7, 2]]], healed(prim(reverse))).
+io(191, failures, [then(inc, msort), [[4]-[4], [4, 3, 2, 4]-[4, 2, 4], [3, 6]-[6]]], [[4]-want([4])-got([5]), [4, 3, 2, 4]-want([4, 2, 4])-got([3, 4, 5, 5]), [3, 6]-want([6])-got([4, 7])]).
+io(192, heal_noise, [then(tail, inc), [[5]-[3, 1, 7, 5, 8], []-[4, 9, 3, 1, 1]]], cannot_heal).
+io(193, heal, [then(double, dedupe), [[4, 4, 9]-[8, 18]]], already_passes).
+io(194, failures, [then(inc, msort), [[0, 4, 0, 1, 6]-[1, 2, 5, 7]]], [[0, 4, 0, 1, 6]-want([1, 2, 5, 7])-got([1, 1, 2, 5, 7])]).
+io(195, heal_noise, [prim(msort), [[3, 3, 8, 0]-[0, 1]]], cannot_heal).
+io(196, heal, [then(msort, msort), [[6, 5, 2, 6]-[2, 6], []-[]]], healed(then(dedupe, evens))).
+io(197, failures, [then(double, inc), [[3, 8, 3, 4, 0]-[0, 3, 4, 8]]], [[3, 8, 3, 4, 0]-want([0, 3, 4, 8])-got([7, 17, 7, 9, 1])]).
+io(198, heal_noise, [then(double, double), [[8]-[], [0, 0, 6, 0, 6]-[2, 8]]], cannot_heal).
+io(199, heal, [then(evens, inc), [[3]-[3], [0, 7, 5, 0, 1]-[0, 1, 5, 7], [2, 5]-[2, 5]]], healed(prim(dedupe))).
+io(200, failures, [then(inc, msort), [[]-[], [2, 8, 0]-[6, 18, 2]]], [[2, 8, 0]-want([6, 18, 2])-got([1, 3, 9])]).
