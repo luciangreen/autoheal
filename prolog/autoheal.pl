@@ -13,7 +13,7 @@
 prim(reverse, L, R) :- reverse(L, R).
 prim(msort, L, R) :- msort(L, R).
 prim(dedupe, L, R) :- sort(L, R).
-prim(tail, L, R) :- ( L = [_|R] -> true ; R = [] ).
+prim(tail, L, R) :- ( L = [_|T] -> R = T ; R = [] ).   % steadfast: binds R only after choosing the branch
 prim(double, L, R) :- maplist([X, Y]>>(Y is 2 * X), L, R).
 prim(inc, L, R) :- maplist([X, Y]>>(Y is X + 1), L, R).
 prim(evens, L, R) :- include([X]>>(X mod 2 =:= 0), L, R).
